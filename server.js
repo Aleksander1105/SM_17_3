@@ -23,7 +23,10 @@ app.post('/updateNote/:note', function(req, res) {
 	});
 });
 
-const server = app.listen(3000, function() {
-	console.log('Przykładowa aplikacja nasłuchuje na http://localhost:3000');
+app.listen(3000);
+
+app.use((req, res, next) => {
+  res.status(404).send('Page not found')
 });
+
 
